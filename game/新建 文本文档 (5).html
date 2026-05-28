@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>陈柏砚 · 数字媒体创作人 | 作品集 + Unity游戏</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f5f7fc; color: #1f2b38; line-height: 1.5; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 2rem 1.8rem; }
+        .card { background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); border-radius: 2rem; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.7); transition: all 0.25s ease; }
+        .card:hover { transform: translateY(-3px); }
+        .hero { display: flex; flex-wrap: wrap; gap: 2.2rem; align-items: center; padding: 2rem 2.2rem; margin-bottom: 2.5rem; }
+        .avatar-circle { flex-shrink: 0; width: 150px; height: 150px; background: linear-gradient(135deg, #2d5d8c, #4b77a9); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid white; }
+        .avatar-circle i { font-size: 4.2rem; color: white; }
+        .hero-info h1 { font-size: 2.8rem; font-weight: 800; background: linear-gradient(120deg, #1f4662, #2b6c9e); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .pronounce { font-size: 1rem; background: #eef3fc; display: inline-block; padding: 0.2rem 1rem; border-radius: 40px; color: #2c6282; margin-left: 0.5rem; }
+        .hero-tagline { font-size: 1.2rem; font-weight: 500; color: #2c5a7a; margin: 0.6rem 0 0.8rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .badge-light { background: #eaf4ff; padding: 0.25rem 1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; color: #1a5d7d; }
+        .hero-desc { font-size: 1rem; color: #2c455b; max-width: 620px; margin: 1rem 0 1.2rem; }
+        .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.7rem; color: #103a51; }
+        .section-title i { color: #3a7b9e; font-size: 1.5rem; }
+        .inner-card { padding: 1.6rem 1.8rem; }
+        .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 2.2rem; }
+        .skills-wrapper { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.8rem; }
+        .skill-chip { background: #eef2fa; border-radius: 40px; padding: 0.45rem 1.2rem; font-size: 0.85rem; font-weight: 500; color: #1f5779; border: 1px solid #dce5ed; }
+        .sub-block { margin-top: 1.2rem; }
+        .sub-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; color: #1a4e6e; border-left: 3px solid #3f8db3; padding-left: 10px; }
+        .achievement-list { list-style: none; margin-top: 0.5rem; }
+        .achievement-list li { margin-bottom: 1rem; }
+        .list-icon { display: inline-block; width: 24px; color: #2c7da0; }
+        .list-title { font-weight: 700; color: #1a4359; }
+        .list-detail { font-size: 0.85rem; color: #456e88; margin-left: 28px; }
+        hr { margin: 1rem 0; border: 0; height: 1px; background: linear-gradient(to right, #cbdde9, transparent); }
+        .contact-line { display: flex; align-items: center; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid #e4eaf1; }
+        .contact-line i { width: 28px; color: #3a7b9e; }
+        .footer { text-align: center; padding: 1.8rem 0.5rem; font-size: 0.8rem; color: #5c7f99; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 1rem; }
+        .unity-game-container { background: #111; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 30px -12px rgba(0,0,0,0.3); margin-top: 1rem; position: relative; }
+        .game-iframe { width: 100%; height: 550px; border: none; display: block; background: #1a1f2c; }
+        .game-caption { display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; flex-wrap: wrap; gap: 0.8rem; }
+        .btn-fullscreen { background: #2c7da0; color: white; border: none; padding: 0.4rem 1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-fullscreen:hover { background: #1f5e7e; }
+        @media (max-width: 700px) {
+            .container { padding: 1.2rem; }
+            .hero { flex-direction: column; text-align: center; padding: 1.5rem; }
+            .hero-info h1 { font-size: 2rem; }
+            .hero-tagline { justify-content: center; }
+            .game-iframe { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card hero">
+        <div class="avatar-circle"><i class="fas fa-laptop-code"></i></div>
+        <div class="hero-info">
+            <h1>陈柏砚 <span class="pronounce"><i class="fas fa-volume-up"></i> bǎi yàn</span></h1>
+            <div class="hero-tagline">
+                <span>🎨 数字媒体技术 · 大三</span>
+                <span class="badge-light"><i class="fas fa-palette"></i> 平面设计</span>
+                <span class="badge-light"><i class="fas fa-gamepad"></i> 游戏开发</span>
+                <span class="badge-light"><i class="fas fa-robot"></i> AI 辅助创作</span>
+            </div>
+            <p class="hero-desc">具备平面设计、游戏开发与AI工具协同的综合能力。擅于将创意与落地结合，用跨媒介语言打造有温度的数字作品。目前正积极寻求实习与项目合作。</p>
+        </div>
+    </div>
+
+    <div class="grid-2col">
+        <div class="card inner-card">
+            <div class="section-title"><i class="fas fa-cogs"></i><span>核心能力 · 数字工坊</span></div>
+            <div class="sub-block">
+                <div class="sub-title"><i class="fas fa-pen-fancy"></i> 平面设计 & 视觉传达</div>
+                <div class="skills-wrapper">
+                    <span class="skill-chip">Photoshop</span>
+                    <span class="skill-chip">Illustrator</span>
+                    <span class="skill-chip">版式设计</span>
+                </div>
+            </div>
+            <div class="sub-block">
+                <div class="sub-title"><i class="fas fa-gamepad"></i> 游戏引擎 & 开发</div>
+                <div class="skills-wrapper">
+                    <span class="skill-chip">Unity 3D/2D</span>
+                    <span class="skill-chip">Unreal Engine</span>
+                    <span class="skill-chip">C# / 蓝图</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card inner-card">
+            <div class="section-title"><i class="fas fa-trophy"></i><span>主要荣誉 & 竞赛</span></div>
+            <ul class="achievement-list">
+                <li><span class="list-icon">🏆</span> <span class="list-title">传智杯UI设计挑战赛B组初赛一等奖</span><div class="list-detail">全国性设计竞赛 · 突出界面创意与交互逻辑</div></li>
+                <li><span class="list-icon">🥈</span> <span class="list-title">全国大学生数字媒体科技作品及创意竞赛 全国二等奖</span></li>
+                <li><span class="list-icon">📄</span> <span class="list-title">软件著作权 & 校级大创项目“火狮英语”</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Unity 游戏区域 -->
+    <div class="card inner-card" style="margin-bottom: 2rem;">
+        <div class="section-title"><i class="fas fa-gamepad"></i><span>🎮 Unity 游戏作品 · 互动试玩</span></div>
+        <p style="margin-bottom: 0.8rem; color: #3a6b8c;">✨ 下方为本人使用Unity引擎开发的WebGL小游戏。加载可能需要几秒，请耐心等待~</p>
+        <div class="unity-game-container">
+            <iframe class="game-iframe" id="unityGameIframe" src="game/index.html" title="陈柏砚 Unity 小游戏作品" allowfullscreen></iframe>
+        </div>
+        <div class="game-caption">
+            <div><i class="fas fa-info-circle"></i> 操作说明: 点击卡片完成匹配 | Unity WebGL 作品</div>
+            <button class="btn-fullscreen" id="fullscreenBtn"><i class="fas fa-expand"></i> 全屏游玩</button>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.8rem; background: #eef3fc; padding: 0.4rem 0.8rem; border-radius: 20px; display: inline-block;"><i class="fas fa-code-branch"></i> 本人独立开发 · 包含完整游戏逻辑与交互设计</p>
+    </div>
+
+    <div class="grid-2col">
+        <div class="card inner-card">
+            <div class="section-title"><i class="fas fa-microchip"></i><span>工具链 · 创作引擎</span></div>
+            <div class="skills-wrapper">
+                <span class="skill-chip">Figma</span>
+                <span class="skill-chip">Unity3D</span>
+                <span class="skill-chip">Unreal 5</span>
+                <span class="skill-chip">Premiere</span>
+            </div>
+        </div>
+        <div class="card inner-card">
+            <div class="section-title"><i class="fas fa-user-graduate"></i><span>教育背景 & 联系</span></div>
+            <div class="contact-line"><i class="fas fa-envelope"></i><span>chenboyan@dmu.edu.cn</span></div>
+            <div class="contact-line"><i class="fab fa-github"></i><span>github.com/boyan-design</span></div>
+            <div class="contact-line"><i class="fas fa-clock"></i><span>可实习时间：2025年6月起 · 全职/远程</span></div>
+        </div>
+    </div>
+    <div class="footer"><p><i class="far fa-copyright"></i> 2025 陈柏砚 —— 数字媒体创作者 | 内置Unity WebGL游戏作品</p></div>
+</div>
+
+<script>
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const iframe = document.getElementById('unityGameIframe');
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', () => {
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            }
+        });
+    }
+</script>
+</body>
+</html>
